@@ -1,0 +1,79 @@
+{
+  "name": "react-native-multi-range",
+  "description": "A react native multi range slider",
+  "main": "dist/index.js",
+  "module": "components/index.js",
+  "scripts": {
+    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive tests/**/*.test.js",
+    "test:watch": "npm test -- --watch",
+    "test:cover": "istanbul cover -x *.test.js _mocha -- -R spec --require react-native-mock/mock.js --compilers js:babel-core/register 'tests/**/*.test.js'",
+    "test:report": "cat ./coverage/lcov.info | codecov && rm -rf ./coverage",
+    "lint": "eslint components/**/*.js tests/**/*.js",
+    "lintfix": "eslint --fix components/**/*.js tests/**/*.js",
+    "format": "prettier-eslint --write components/**/*.js tests/**/*.js",
+    "precommit": "lint-staged",
+    "build": "babel components --out-dir dist;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/housinghq/react-native-multi-range.git"
+  },
+  "keywords": [],
+  "author": "Dron Rathore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/housinghq/react-native-multi-range/issues"
+  },
+  "homepage": "https://github.com/housinghq/react-native-multi-range",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=15.0.0",
+    "react-native": ">=0.40.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "react-native-generic-text": "^1.2.0",
+    "styled-components": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "chai": "^4.0.2",
+    "codecov.io": "^0.1.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "enzyme": "^2.8.2",
+    "eslint": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.13.4",
+    "istanbul": "^1.1.0-alpha.1",
+    "lint-staged": "^4.0.0",
+    "mocha": "^3.4.2",
+    "prettier-eslint-cli": "^4.1.1",
+    "prop-types": "^15.5.10",
+    "react-dom": "^15.5.4",
+    "react-native-mock": "^0.3.1",
+    "semantic-release": "^6.3.6",
+    "sinon": "^2.3.5"
+  },
+  "lint-staged": {
+    "components/**/*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ],
+    "tests/**/*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  }
+}
