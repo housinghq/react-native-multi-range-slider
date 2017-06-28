@@ -1,5 +1,6 @@
 {
   "name": "react-native-multi-range",
+  "version": "0.1.0",
   "description": "A react native multi range slider",
   "main": "dist/index.js",
   "module": "components/index.js",
